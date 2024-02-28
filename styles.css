@@ -10,7 +10,51 @@ body {
 
 
 section {
+    background-color: rgba(255, 255, 255, 0.247);
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 2rem;
+    border-radius: 2rem;
+}
+
+.timer-container {
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.477);
+    padding: 1rem 1rem;
+    margin: 1rem;
+    border-radius: 1rem;
+}
+
+.timer-buttons {
+    display: flex;
+    flex-direction: column;
+}
+
+.timer-buttons button {
+    margin: 0.1rem 0.3rem;
+    font-size: 1.5rem;
+    height: 1.5rem;
+    width: 1.5rem;
+    border: none;
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.buttons {
+
+}
+
+.buttons button {
+    margin: 0 0.2em 0 0.2rem;
+    background-color: rgba(137, 43, 226, 0.375);
+    border: none;
+    padding: 0.2rem 1.5rem 0.2rem 1.5rem;
+    border-radius: 3rem;
+    font-size: 2rem;
+    font-weight: bold;
 }
