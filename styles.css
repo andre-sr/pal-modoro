@@ -9,13 +9,15 @@ body {
 
 
 
-section {
+.timer-section {
     background-color: rgba(255, 255, 255, 0.247);
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 2rem;
     border-radius: 2rem;
+    margin-top: 2rem;
+    width: 35rem;
 }
 
 .timer-container {
@@ -57,4 +59,16 @@ section {
     border-radius: 3rem;
     font-size: 2rem;
     font-weight: bold;
+}
+
+.streak-section {
+    background-color: rgba(255, 255, 255, 0.247);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    border-radius: 2rem;
+    margin-top: 2rem;
+    width: 35rem;
+    font-size: 1.6rem;
 }

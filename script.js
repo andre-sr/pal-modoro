@@ -1,29 +1,36 @@
 //VARIABLES
 let timeInterval
 let totalSeconds = 0
-let totalMinutes = 25
+let startTotalMinutes = 1
+let totalMinutes = 1
 
 const startBt = document.querySelector('#start-bt')
 const pauseBt = document.querySelector('#pause-bt')
 const restartBt = document.querySelector('#restart-bt')
 const plusBt = document.querySelector('#plus')
 const minusBt = document.querySelector('#minus')
+const streakSection = document.querySelector('#streak-section')
 
 //EVENTOS
 startBt.addEventListener('click', () => {startTimer()})
 pauseBt.addEventListener('click', () => {pause()})
 restartBt.addEventListener('click', () => {restart()})
 plusBt.addEventListener('click', () => {
-    totalMinutes++
-    attTimerDisplay()
+    if (!timeInterval) {
+        totalMinutes++
+        attTimerDisplay()
+    }
 })
 minusBt.addEventListener('click', () => {
-    totalMinutes--
-    attTimerDisplay()
+    if (!timeInterval && totalMinutes > 1) {
+        totalMinutes--
+        attTimerDisplay()
+    }
 })
 
 //FUNCTIONS
 function startTimer() {
+    totalMinutes = startTotalMinutes
     if (!timeInterval){
         timeInterval = setInterval(updateTimer, 1000)
         
@@ -33,12 +40,15 @@ function startTimer() {
 function updateTimer() {
     attTimerDisplay()
 
-    if (totalSeconds == 0){
+    if (totalMinutes === 0 && totalSeconds === 0) {
+        creator()
+    } else if (totalSeconds == 0){
         totalMinutes = totalMinutes - 1
         totalSeconds = 59
     } else {
         totalSeconds = totalSeconds - 1
     }
+    
 }
 
 function attTimerDisplay () {
@@ -59,4 +69,22 @@ function restart() {
     totalMinutes = 25
     
     updateTimer()
+}
+
+function creator() {
+    console.log('flamengo!')
+    clearInterval(timeInterval);
+    timeInterval = null;
+    streakSection.classList.add('streak-section')
+    startTotalMinutesFormat = startTotalMinutes.toString().padStart(2,'0')
+    streakSection.innerHTML = `<div class="timer-container">
+                                    <div id="timer">
+                                    Você concluiu um pal-modoro de 
+                                    <strong>00:${startTotalMinutesFormat}:00</strong>
+                                    minutos. Parabens!
+                                    </div>
+                                </div>`
+
+
+    
 }
