@@ -10,6 +10,7 @@ const restartBt = document.querySelector('#restart-bt')
 const plusBt = document.querySelector('#plus')
 const minusBt = document.querySelector('#minus')
 const streakSection = document.querySelector('#streak-section')
+const musicSectionBt = document.querySelector('#music-section-open')
 
 //EVENTOS
 startBt.addEventListener('click', () => {startTimer()})
@@ -26,6 +27,12 @@ minusBt.addEventListener('click', () => {
         totalMinutes--
         attTimerDisplay()
     }
+})
+musicSectionBt.addEventListener('click', () => {
+    document.querySelector('.modal').classList.remove('hidden')
+    document.querySelector('#music-section-close').addEventListener('click', () => {
+        document.querySelector('.modal').classList.add('hidden')
+    })
 })
 
 //FUNCTIONS
@@ -64,27 +71,23 @@ function pause() {
 }
 
 function restart() {
-    pause()
+    clearInterval(timeInterval);
     totalSeconds = 0
     totalMinutes = 25
-    
-    updateTimer()
+    attTimerDisplay()
 }
 
 function creator() {
-    console.log('flamengo!')
-    clearInterval(timeInterval);
+    pause()
     timeInterval = null;
     streakSection.classList.add('streak-section')
     startTotalMinutesFormat = startTotalMinutes.toString().padStart(2,'0')
-    streakSection.innerHTML = `<div class="timer-container">
+    streakSection.innerHTML = `${streakSection.innerHTML}
+                                <div class="timer-container">
                                     <div id="timer">
                                     Você concluiu um pal-modoro de 
                                     <strong>00:${startTotalMinutesFormat}:00</strong>
                                     minutos. Parabens!
                                     </div>
-                                </div>`
-
-
-    
+                                </div>`    
 }

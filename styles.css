@@ -5,6 +5,7 @@ body {
     align-items: center;
     background-color: rgb(173, 173, 239);
     font-size: 36px;
+    overflow: hidden;
 }
 
 
@@ -71,4 +72,54 @@ body {
     margin-top: 2rem;
     width: 35rem;
     font-size: 1.6rem;
+}
+
+.modal {
+    position: absolute;
+    width: 101vw;
+    height: 101vh;
+    background-color: rgba(0, 0, 0, 0.375);
+    margin-top: 42vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.modal header {
+    width: 95vw;
+    display: flex;
+    justify-content: end;
+}
+
+.modal header button {
+    border: none;
+    width: 3.3rem;
+    height: 3.3rem;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.549);
+    color: rgb(60, 60, 60);
+}
+
+.modal-container {
+    background-color: rgba(255, 255, 255, 0.247);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    border-radius: 2rem;
+    margin-top: 2rem;
+    width: 35rem;
+    font-size: 1.6rem;
+}
+
+.modal iframe {
+    
+    aspect-ratio: 16/9;
+    width: 28rem;
+    height: auto;
 }
