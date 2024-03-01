@@ -8,7 +8,33 @@ body {
     overflow: hidden;
 }
 
+header {
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
 
+header h1 {
+    background-color: rgba(255, 255, 255, 0.247);
+    padding: 0.3rem;
+    border-radius: 1rem;
+    font-size: 2rem;
+    padding: 0 2rem 0px 2rem;
+    text-align: center;
+    justify-content: center;
+}
+
+header button {
+    border: none;
+    background-color: rgba(255, 255, 255, 0.247);
+    padding: 0.3rem;
+    border-radius: 1rem;
+    font-size: 2rem;
+    font-weight: bold;
+}
 
 .timer-section {
     background-color: rgba(255, 255, 255, 0.247);
@@ -74,16 +100,32 @@ body {
     font-size: 1.6rem;
 }
 
-.modal {
+.modal-section {
     position: absolute;
-    width: 101vw;
+    transform: translateX(-34rem);
+    width: 31vw;
+    animation: 400ms;
+}
+
+.modal {
+    overflow-x: hidden;
     height: 101vh;
-    background-color: rgba(0, 0, 0, 0.375);
-    margin-top: 42vh;
+    background-color: rgba(0, 0, 0, 0.899);
+    margin-top: 45vh;
     display: flex;
     flex-direction: column;
+    justify-content:flex-start;
     align-items: center;
-    padding: 2rem;
+    animation: 400ms;
+}
+
+.modal::-webkit-scrollbar {
+    color: rgba(42, 42, 42, 0.727);
+    width: 10px;
+}
+.modal::-webkit-scrollbar-thumb {
+    background-color: #88888882; /* cor do polegar da barra de rolagem */
+    border-radius: 1rem; /* borda arredondada do polegar */
 }
 
 .hidden {
@@ -91,18 +133,12 @@ body {
 }
 
 .modal header {
-    width: 95vw;
     display: flex;
-    justify-content: end;
 }
 
 .modal header button {
-    border: none;
-    width: 3.3rem;
-    height: 3.3rem;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.549);
-    color: rgb(60, 60, 60);
+    width: 4rem;
+    margin-left: 55rem;
 }
 
 .modal-container {
@@ -110,16 +146,16 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 2rem;
-    border-radius: 2rem;
+    padding: 1.5rem;
+    border-radius: 1rem;
     margin-top: 2rem;
-    width: 35rem;
+    width: 25rem;
     font-size: 1.6rem;
 }
 
 .modal iframe {
-    
     aspect-ratio: 16/9;
-    width: 28rem;
+    width: 22rem;
     height: auto;
+    
 }

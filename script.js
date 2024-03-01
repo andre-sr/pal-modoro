@@ -18,20 +18,20 @@ pauseBt.addEventListener('click', () => {pause()})
 restartBt.addEventListener('click', () => {restart()})
 plusBt.addEventListener('click', () => {
     if (!timeInterval) {
-        totalMinutes++
-        attTimerDisplay()
+        startTotalMinutes++
+        attTimerDisplay(totalSeconds, startTotalMinutes)
     }
 })
 minusBt.addEventListener('click', () => {
-    if (!timeInterval && totalMinutes > 1) {
-        totalMinutes--
-        attTimerDisplay()
+    if (!timeInterval && startTotalMinutes > 1) {
+        startTotalMinutes--
+        attTimerDisplay(totalSeconds, startTotalMinutes)
     }
 })
 musicSectionBt.addEventListener('click', () => {
-    document.querySelector('.modal').classList.remove('hidden')
+    document.querySelector('.modal-section').classList.remove('hidden')
     document.querySelector('#music-section-close').addEventListener('click', () => {
-        document.querySelector('.modal').classList.add('hidden')
+        document.querySelector('.modal-section').classList.add('hidden')
     })
 })
 
@@ -45,7 +45,7 @@ function startTimer() {
 }
 
 function updateTimer() {
-    attTimerDisplay()
+    attTimerDisplay(totalSeconds, totalMinutes)
 
     if (totalMinutes === 0 && totalSeconds === 0) {
         creator()
@@ -58,9 +58,9 @@ function updateTimer() {
     
 }
 
-function attTimerDisplay () {
-    totalSecondsFormat = totalSeconds.toString().padStart(2,'0')
-    totalMinutesFormat = totalMinutes.toString().padStart(2,'0')
+function attTimerDisplay (seconds, minutes) {
+    totalSecondsFormat = seconds.toString().padStart(2,'0')
+    totalMinutesFormat = minutes.toString().padStart(2,'0')
 
     document.querySelector('#timer').innerText = `00:${totalMinutesFormat}:${totalSecondsFormat}`
 }
