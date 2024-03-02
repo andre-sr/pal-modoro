@@ -11,6 +11,8 @@ const plusBt = document.querySelector('#plus')
 const minusBt = document.querySelector('#minus')
 const streakSection = document.querySelector('#streak-section')
 const musicSectionBt = document.querySelector('#music-section-open')
+const taskSectionBt = document.querySelector('#task-section-bt')
+const pauseSectionBt = document.querySelector('#pause-section-bt')
 
 //EVENTOS
 startBt.addEventListener('click', () => {startTimer()})
@@ -33,6 +35,14 @@ musicSectionBt.addEventListener('click', () => {
     document.querySelector('#music-section-close').addEventListener('click', () => {
         document.querySelector('.modal-section').classList.add('hidden')
     })
+})
+taskSectionBt.addEventListener('click', () => {
+    document.querySelector('.timer-section').classList.remove('hidden')
+    document.querySelector('.pause-section').classList.add('hidden')
+})
+pauseSectionBt.addEventListener('click', () => {
+    document.querySelector('.timer-section').classList.add('hidden')
+    document.querySelector('.pause-section').classList.remove('hidden')
 })
 
 //FUNCTIONS

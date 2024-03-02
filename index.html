@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
+    <script src="pause.js" defer></script>
 </head>
 <body>
     <header>
@@ -15,7 +16,7 @@
         <button>Sla oq</button>     
     </header>
     <main>
-        <section class="timer-section">
+        <section class="timer-section hidden">
             <h1>Pal-modoro</h1>
             <div class="timer-container">
                 <div id="timer">00:01:00</div>
@@ -31,6 +32,26 @@
                 <button id="restart-bt">Restart</button>
             </div>
         </section>
+        <section class="pause-section">
+            <h1>Pausa</h1>
+            <div class="timer-container">
+                <div id="timer2">00:01:00</div>
+                <div class="timer-buttons">
+                    <button id="plus2">+</button>
+                    <button id="minus2">-</button>
+                </div>
+            </div>
+            <div class="buttons">
+                <button id="pause-bt2">Pause</button>
+                <button id="start-bt2">Start</button>
+                <button id="restart-bt2">Restart</button>
+            </div>
+        </section>
+
+        <section class="buttons-timer">
+            <button id="task-section-bt">Task</button>
+            <button id="pause-section-bt">Pause</button>
+        </section>
         <section id="streak-section">
 
         </section>
@@ -45,13 +66,13 @@
                 <button id="music-section-close"><</button>
             </header>
             <div class="modal-container">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/jfKfPfyJRdk?si=ySMi5zREcT_STaVq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/jfKfPfyJRdk?si=ySMi5zREcT_STaVq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
             </div>
             <div class="modal-container">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/nWjC1RnLYbM?si=vVkpmO-fxOrJzp4R" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/nWjC1RnLYbM?si=vVkpmO-fxOrJzp4R" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
             </div>
             <div class="modal-container">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/4xDzrJKXOOY?si=DzTTEy79AOC4ZW4l" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/4xDzrJKXOOY?si=DzTTEy79AOC4ZW4l" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
             </div>
             
         </div>
